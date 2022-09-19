@@ -10,7 +10,7 @@ const helmet = require('helmet');
 // const handleErrors = require('./errors/handleErrors');
 // const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 3002, LOCALHOST = 'mongodb://localhost:27017/moviesdb' } = process.env;
+const { PORT = 3002, DB_ADDRESS = 'mongodb://localhost:27017/moviesdb' } = process.env;
 const app = express();
 // const limiter = rateLimit({
 //   windowMs: 15 * 60 * 1000,
@@ -19,7 +19,7 @@ const app = express();
 //   legacyHeaders: false,
 // });
 
-// mongoose.connect(LOCALHOST, {
+// mongoose.connect(DB_ADDRESS, {
 //   useNewUrlParser: true,
 // });
 //
