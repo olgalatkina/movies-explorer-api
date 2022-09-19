@@ -3,40 +3,35 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const { errors } = require('celebrate');
-const rateLimit = require('express-rate-limit');
+// const { errors } = require('celebrate');
 const helmet = require('helmet');
 // const router = require('./routes');
-// const handleErrors = require('./errors/handleErrors');
-// const { requestLogger, errorLogger } = require('./middlewares/logger');
+const handleErrors = require('./errors/handleErrors');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { limiter } = require('./middlewares/limiter');
+const { mongoUrl, port } = require('./utils/config');
 
-const { PORT = 3002, DB_ADDRESS = 'mongodb://localhost:27017/moviesdb' } = process.env;
+const { PORT = port, DB_URL = mongoUrl } = process.env;
 const app = express();
-// const limiter = rateLimit({
-//   windowMs: 15 * 60 * 1000,
-//   max: 100,
-//   standardHeaders: true,
-//   legacyHeaders: false,
-// });
 
-// mongoose.connect(DB_ADDRESS, {
-//   useNewUrlParser: true,
-// });
-//
-// app.use(cors());
-// app.use(helmet());
-//
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
+mongoose.connect(DB_URL, {
+  useNewUrlParser: true,
+});
 
-// app.use(requestLogger);
+app.use(cors());
+app.use(helmet());
 
-// app.use(limiter);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(requestLogger);
+
+app.use(limiter);
 // app.use(router);
 
-// app.use(errorLogger);
+app.use(errorLogger);
 // router.use(errors());
-// app.use(handleErrors);
+app.use(handleErrors);
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
