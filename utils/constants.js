@@ -17,7 +17,7 @@ const Message = {
   MOVIE_FORBIDDEN: 'Отсутствуют права на удаление фильма',
   USER_CONFLICT: 'Такой пользователь уже существует',
   USER_NOT_FOUND: 'Пользователь не найден',
-}
+};
 
 module.exports = {
   CodeError,

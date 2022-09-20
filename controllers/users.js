@@ -5,6 +5,7 @@ const BadRequestError = require('../errors/BadRequestError');
 const NotFoundError = require('../errors/NotFoundError');
 const ConflictError = require('../errors/ConflictError');
 const { CodeSuccess, Message } = require('../utils/constants');
+
 const { NODE_ENV, JWT_SECRET, SALT_ROUNDS } = process.env;
 
 module.exports.createUser = (req, res, next) => {
