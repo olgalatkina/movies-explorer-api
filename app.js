@@ -3,9 +3,9 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-// const { errors } = require('celebrate');
+const { errors } = require('celebrate');
 const helmet = require('helmet');
-// const router = require('./routes');
+const router = require('./routes');
 const handleErrors = require('./errors/handleErrors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { limiter } = require('./middlewares/limiter');
@@ -27,10 +27,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);
 
 app.use(limiter);
-// app.use(router);
+app.use(router);
 
 app.use(errorLogger);
-// router.use(errors());
+router.use(errors());
 app.use(handleErrors);
 
 app.listen(PORT, () => {
