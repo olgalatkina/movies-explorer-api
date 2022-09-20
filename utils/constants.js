@@ -17,6 +17,9 @@ const Message = {
   MOVIE_FORBIDDEN: 'Отсутствуют права на удаление фильма',
   USER_CONFLICT: 'Такой пользователь уже существует',
   USER_NOT_FOUND: 'Пользователь не найден',
+  VALIDATION_BAD_REQUEST: 'Некорректная ссылка',
+  PAGE_NOT_FOUND: 'Страница не найдена',
+  SERVER_ERROR: 'На сервере произошла ошибка',
 };
 
 module.exports = {

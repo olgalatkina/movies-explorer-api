@@ -1,11 +1,12 @@
 const { celebrate, Joi } = require('celebrate');
 const isIRL = require('validator/lib/isURL');
 const BadRequestError = require('../errors/BadRequestError');
+const { Message } = require('../utils/constants');
 
 const urlValidator = (url) => {
   const validity = isIRL(url);
   if (!validity) {
-    throw new BadRequestError('Некорректная ссылка');
+    throw new BadRequestError(Message.VALIDATION_BAD_REQUEST);
   }
   return url;
 };
