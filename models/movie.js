@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 const isURL = require('validator/lib/isURL');
+const { Message } = require('../utils/constants');
 
 const urlValidator = {
   validator(url) {
     return isURL(url);
   },
-  message: 'Некорректная ссылка',
+  message: Message.MOVIE_BAD_LINK,
 };
 
 const movieSchema = new mongoose.Schema({
