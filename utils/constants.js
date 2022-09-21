@@ -16,11 +16,10 @@ const Message = {
   BAD_REQUEST: 'Переданы некорректные данные',
   MOVIE_NOT_FOUND: 'Фильм с указанным id не найден',
   MOVIE_FORBIDDEN: 'Отсутствуют права на удаление фильма',
-  MOVIE_BAD_LINK: 'Некорректная ссылка',
   USER_BAD_EMAIL: 'Некорректный адрес электронной почты',
   USER_CONFLICT: 'Такой пользователь уже существует',
   USER_NOT_FOUND: 'Пользователь не найден',
-  VALIDATION_BAD_REQUEST: 'Некорректная ссылка',
+  VALIDATION_BAD_URL: 'Некорректная ссылка',
   PAGE_NOT_FOUND: 'Страница не найдена',
   SERVER_ERROR: 'На сервере произошла ошибка',
 };

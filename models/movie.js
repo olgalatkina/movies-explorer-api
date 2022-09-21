@@ -6,7 +6,7 @@ const urlValidator = {
   validator(url) {
     return isURL(url);
   },
-  message: Message.MOVIE_BAD_LINK,
+  message: Message.VALIDATION_BAD_URL,
 };
 
 const movieSchema = new mongoose.Schema({

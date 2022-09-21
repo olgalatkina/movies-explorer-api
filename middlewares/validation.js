@@ -6,7 +6,7 @@ const { Message } = require('../utils/constants');
 const urlValidator = (url) => {
   const validity = isIRL(url);
   if (!validity) {
-    throw new BadRequestError(Message.VALIDATION_BAD_REQUEST);
+    throw new BadRequestError(Message.VALIDATION_BAD_URL);
   }
   return url;
 };
