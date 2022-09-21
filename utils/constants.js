@@ -12,9 +12,11 @@ const CodeSuccess = {
 };
 
 const Message = {
+  UNAUTHORIZED: 'Неправильные почта или пароль',
   BAD_REQUEST: 'Переданы некорректные данные',
   MOVIE_NOT_FOUND: 'Фильм с указанным id не найден',
   MOVIE_FORBIDDEN: 'Отсутствуют права на удаление фильма',
+  USER_BAD_EMAIL: 'Некорректный адрес электронной почты',
   USER_CONFLICT: 'Такой пользователь уже существует',
   USER_NOT_FOUND: 'Пользователь не найден',
   VALIDATION_BAD_REQUEST: 'Некорректная ссылка',
